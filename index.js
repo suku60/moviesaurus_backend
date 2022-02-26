@@ -14,3 +14,6 @@ let corsConfig = {
     optionsSuccessStatus: 204
 };
 
+app.use(express.json());
+app.use(cors(corsConfig));
+app.use(router);
