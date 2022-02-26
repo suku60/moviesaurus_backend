@@ -2,7 +2,9 @@
 
 ### Proyect description
 
+We are creating a backend that will be able to interact with TheMovieDatabase's API.
 
+You will be able to create your own user in a database, and simulate you are renting a movie for a period of time. 
 
 
 ###### Register & Login
