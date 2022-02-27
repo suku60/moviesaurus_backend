@@ -12,8 +12,6 @@ OrdersController.newOrder = (req,res) => {
     
     let body = req.body;
 
-    console.log("este es body",body)
-
     Order.create({
         price: body.price,
         peliculaId: body.peliculaId,
@@ -103,11 +101,46 @@ OrdersController.updateOrder = async (req, res) => {
 
 // - All
 
-OrdersController.deleteAllOrders = (req, res) => {};
+OrdersController.deleteAllOrders = async(req, res) => {
+
+    try {
+
+        Order.destroy({
+            where : {},
+            truncate : false
+        })
+        .then(deletedOrder => {
+            res.send(`${deletedOrder} have been deleted`);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 // - Filtered by Id
 
-OrdersController.deleteOrder = (req, res) => {};
+OrdersController.deleteOrder = async (req, res) => {
+
+    let id = req.params.id;
+
+    try {
+
+        Order.destroy({
+            where : { id : id },
+            truncate : false
+        })
+        .then(deletedOrder => { 
+
+            res.send(`Order with id: ${id} has been deleted`);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 
 module.exports = OrdersController;

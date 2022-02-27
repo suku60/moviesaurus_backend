@@ -157,7 +157,7 @@ UsersController.deleteById = async (req, res) => {
             truncate : false
         })
         .then(deletedUser => {
-            console.log(deletedUser);
+
             res.send(`User with id: ${id} has been deleted`);
         })
 
@@ -181,8 +181,6 @@ UsersController.logUser = (req, res) => {
         }else {
 
             if (bcrypt.compareSync(password, User.password)) { 
-
-                console.log(User.password);
 
                 let token = jwt.sign({ user: User }, authConfig.secret, {
                     expiresIn: authConfig.expires
