@@ -9,9 +9,22 @@ const UsersController = {};
 UsersController
 
 // (Read) Find users
-UsersController.showAllUsers = (req, res) => {};
+UsersController.showAllUsers = (req, res) => {
+
+    User.findAll()
+    .then(data => {
+
+        res.send(data)
+    });
+};
 // - Filtered by id / email
-UsersController.showAllUsersById = (req, res) => {};
+UsersController.showAllUsersById = (req, res) => {
+
+    User.findByPk(req.params.id)
+    .then(data => {
+        res.send(data)
+    });
+};
 UsersController.showAllUsersByEmail = (req, res) => {};
 
 
