@@ -88,6 +88,8 @@ type:
 
 It will auto install all needed dependencies.
 
+<!-- Sequelieze not needed for user -->
+
 
 
 
