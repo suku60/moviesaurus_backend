@@ -70,19 +70,24 @@ POST method: create a new user
 
 
 #### - ***modify user data***
+
+##### **JWT or admin privileges needed**
+
 ``
 http://localhost:3000/users/:id`` 
 
 PUT method: modify user data
 
-**JWT needed**
 
 ``
 http://localhost:3000/users/:id/levelup``
 
 PUT method: level up the user data
 
+
 #### - ***delete user data***
+
+##### **Admin privileges needed**
 ``
 http://localhost:3000/users/``
 
@@ -139,6 +144,8 @@ GET method: show a list of adult movies
 
 #### - ***update movie data***
 
+##### **JWT(user privileges) or admin privileges needed**
+
 ``
 http://localhost:3000/movies/:id``
 
@@ -146,6 +153,8 @@ PUT method: update/modify movie data by id.
 
 
 #### - ***delete movies***
+
+##### **Admin privileges needed**
 
 ``
 http://localhost:3000/movies/``
@@ -157,15 +166,20 @@ DELETE method: delete a movie by id
 
 ***
 
-###### Orders
+### ***Order endpoints***
 
-Available as a member:
+##### **JWT(user privileges) or admin privileges needed**
+
 ``
 http://localhost:3000/orders/``
+
 GET method: shows a list of all orders
+
 POST method: create a new order
+
 ``
 http://localhost:3000/orders/active ``
+
 GET method: shows a list of all active orders
 
 Order requirements:
@@ -185,28 +199,23 @@ Order requirements:
 `}`
 ``
 http://localhost:3000/orders/:id``
+
 PUT method: update order data
+
 ``
 http://localhost:3000/orders/``
+
 DELETE method: delete all orders
+
 ``
 http://localhost:3000/orders/:id/``
+
 DELETE method: delete an order by id
 
+***
+#### ***Level privileges explained***
 
-### How to add your own movie to the database
-
-Open Postman.
-
-Write down or copy the following adress.
-``
-http://localhost:3000/movies/``
-
-POST method: add a new movie
-
-Movie requirements:
-<!--  -->
-###### Privileges (suscription)
+  
 
 Level 1 users are able to explore our database and to create requests for an order.
 
