@@ -8,8 +8,6 @@ const UsersController = {};
 
 // Controller functions
 
-UsersController
-
 // (Read) Find users
 
 UsersController.showAllUsers = (req, res) => {
@@ -101,7 +99,26 @@ UsersController.createUser = (req, res) => {
 
 // (Update) Modify user data
 
-UsersController.updateUser = (req, res) => {};
+UsersController.updateUser = async (req, res) => {
+
+    let data = req.body;
+
+    let id = req.params.id;
+
+    try {
+
+        User.update(data, {
+            where: {id : id}
+        })
+        .then(updated => {
+            res.send(updated);
+        });
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 UsersController.levelUpUser = (req, res) => {};
 
