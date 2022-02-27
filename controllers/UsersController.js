@@ -53,7 +53,7 @@ UsersController.createUser = (req, res) => {
         let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds)); 
         let email = req.body.email;
 
-        Usuario.findAll({
+        User.findAll({
             where : {
 
                 [Op.or] : [
