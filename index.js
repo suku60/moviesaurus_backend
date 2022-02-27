@@ -17,3 +17,8 @@ let corsConfig = {
 app.use(express.json());
 app.use(cors(corsConfig));
 app.use(router);
+
+db.then(() => {
+        app.listen(PORT, () => console.log(`Server on port ${PORT}`));
+    })
+    .catch((err) => console.log(err.message));

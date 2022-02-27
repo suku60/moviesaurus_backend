@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const adminPrivileges = require("../middlewares/adminPrivileges");
 
-const MoviesController = require('../controllers/UsersController');
-const { route } = require('../router');
+const OrdersController = require('../controllers/OrdersController');
 
 // CRUD Restfull endpoints. 
 

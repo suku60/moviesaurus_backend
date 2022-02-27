@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const auth = require("../middlewares/auth");
+const adminPrivileges = require("../middlewares/adminPrivileges");
 
 const UsersController = require('../controllers/UsersController');
-const { route } = require('../router');
 
 // CRUD Restfull endpoints. 
 
@@ -29,4 +30,3 @@ router.delete('/:id', auth, UsersController.deleteById);
 
 
 module.exports = router;
-
