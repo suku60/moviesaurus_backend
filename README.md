@@ -14,14 +14,21 @@ Open Postman.
 Use the following adress and post method for user creation: 
 http://localhost:3000/users/
 
-Send the data as and {object}:
-{
-    name : name
-    birthdate : birthdate
-    username : username
-    password : password
-    <!-- complete as we do it -->
-}
+Send the data as and `{object}`:
+
+`{`
+
+   ` name : <insert name here>` 
+
+   ` birthdate : <insert birthdate here>`
+
+   ` username : <insert username here>`
+
+   ` password : <insert password here>`
+
+   ` email : <insert email here>`
+   
+`}`
 
 
 
@@ -42,7 +49,20 @@ GET method: shows a list of all users
 POST method: create a new user
 
 User requirements:
-<!--  -->
+
+`{`
+
+   ` name : <insert name here>` 
+
+   ` birthdate : <insert birthdate here>`
+
+   ` username : <insert username here>`
+
+   ` password : <insert password here>`
+
+   ` email : <insert email here>`
+   
+`}`
 
 http://localhost:3000/users/:id
 PUT method: modify user data
@@ -61,7 +81,22 @@ GET method: shows a list of all movies
 POST method: add a new movie
 
 Movie requirements:
-<!--  -->
+
+`{`
+
+   ` title : <insert title here>` 
+
+   ` year : <insert year here>`
+
+   ` adult : <true or false>`
+
+   ` popularity : <insert popularity here>`
+
+   ` image : <insert image here>`
+   
+   ` description : <insert description here>`
+   
+`}`
 
 http://localhost:3000/movies/:id
 PUT method: update movie data by id.
@@ -84,7 +119,20 @@ http://localhost:3000/orders/active
 GET method: shows a list of all active orders
 
 Order requirements:
-<!--  -->
+
+`{`
+
+   ` userId: <insert userIdhere>` 
+
+   ` movieId : <insert movieId here>`
+
+   ` date : <insert date here>`
+
+   ` price : <insert price here>`
+
+   ` active : <true or false>`
+   
+`}`
 
 http://localhost:3000/orders/:id
 PUT method: update order data
