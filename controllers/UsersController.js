@@ -99,7 +99,6 @@ UsersController.createUser = (req, res) => {
     
 };
 
-
 // (Update) Modify user data
 
 UsersController.updateUser = (req, res) => {};

@@ -33,6 +33,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      rol: {
+        default: false,
+        allowNull: false,
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

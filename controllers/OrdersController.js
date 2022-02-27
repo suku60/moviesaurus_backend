@@ -36,18 +36,13 @@ OrdersController.newOrder = (req,res) => {
 
 OrdersController.showOrders = (req, res) => {};
 
-
 // - Show only active:
 
 OrdersController.showActiveOrders = (req, res) => {};
 
-
-
-
 // (Update) Modify order
 
 OrdersController.updateOrder = (req, res) => {};
-
 
 // (Delete) Orders
 
