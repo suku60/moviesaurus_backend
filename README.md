@@ -25,11 +25,13 @@ Send the data as and {object}:
 
 
 
-###### Privileges explanation
+###### Privileges (suscription)
 
-Level 1 users will be able to explore the database but only level 2 users will be able to create orders. 
+Level 1 users are able to explore our database and to create requests for an order.
 
-Use the level up for having the access to create orders.
+Level 2 users will be able to create a maximum of 5 orders every month whenever they want to.
+
+Upgrade to level to paying the monthly suscription
 
 ##### How to simulate and test from Postman
 
@@ -54,16 +56,39 @@ PUT method: level up the user data
 
 ###### Movies
 
-- Create
+http://localhost:3000/movies/
+GET method: shows a list of all movies
+POST method: add a new movie
 
-- Read / Show
+Movie requirements:
+<!--  -->
 
-- Update / Modify
+http://localhost:3000/movies/:id
+PUT method: update movie data.
 
-- Delete
+http://localhost:3000/movies/
+DELETE method: delete all movies
+
+http://localhost:3000/movies/:id
+DELETE method: delete a movie by id
 
 ###### Orders
 
+http://localhost:3000/orders/
+GET method: shows a list of all users
+POST method: create a new user
+
+User requirements:
+<!--  -->
+
+http://localhost:3000/orders/:id
+PUT method: modify user data
+
+http://localhost:3000/orders/
+DELETE method: delete all users
+
+http://localhost:3000/orders/:id/levelup
+PUT method: level up the user data
 - Create
 
 - Read / Show
@@ -89,8 +114,6 @@ type:
 It will auto install all needed dependencies.
 
 <!-- Sequelieze not needed for user -->
-
-
 
 
 ###### How to add your own movie to the database

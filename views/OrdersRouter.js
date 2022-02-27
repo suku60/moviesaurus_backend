@@ -24,7 +24,7 @@ router.put('/:id', OrdersController.updateOrder);
 // - All
 router.delete('/', OrdersController.deleteAllOrders);
 // - Filtered by Id
-router.delete('/', OrdersController.deleteOrder);
+router.delete('/:id', OrdersController.deleteOrder);
 
 
 module.exports = router;

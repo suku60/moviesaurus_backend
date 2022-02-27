@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "admin_developement",
-    "password": "password",
+    "password": "1234",
     "database": "videoclub_2022",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "admin_test",
-    "password": "password",
+    "password": "1234",
     "database": "videoclub_2022_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "admin_production",
-    "password": "password",
+    "password": "1234",
     "database": "videoclub_2022_production",
     "host": "127.0.0.1",
     "dialect": "mysql"

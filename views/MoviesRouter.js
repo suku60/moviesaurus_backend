@@ -25,7 +25,7 @@ router.put('/:id', MoviesController.updateMovie);
 // - All
 router.delete('/', MoviesController.deleteAllMovies);
 // - Filtered by Id
-router.delete('/', MoviesController.deleteMovie);
+router.delete('/:id', MoviesController.deleteMovie);
 
 
 module.exports = router;
