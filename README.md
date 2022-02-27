@@ -64,7 +64,7 @@ Movie requirements:
 <!--  -->
 
 http://localhost:3000/movies/:id
-PUT method: update movie data.
+PUT method: update movie data by id.
 
 http://localhost:3000/movies/
 DELETE method: delete all movies
@@ -93,7 +93,7 @@ http://localhost:3000/orders/
 DELETE method: delete all orders
 
 http://localhost:3000/orders/:id/
-DELETE methos: delete an order by id
+DELETE method: delete an order by id
 
 ### How to run
 
@@ -114,3 +114,14 @@ It will auto install all needed dependencies.
 
 
 ###### How to add your own movie to the database
+
+Open Postman.
+
+Write down or copy the following adress.
+
+http://localhost:3000/movies/
+
+POST method: add a new movie
+
+Movie requirements:
+<!--  -->
