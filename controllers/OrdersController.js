@@ -78,7 +78,26 @@ OrdersController.showActiveOrders = (req,res) => {
 
 // (Update) Modify order
 
-OrdersController.updateOrder = (req, res) => {};
+OrdersController.updateOrder = async (req, res) => {
+
+    let data = req.body;
+
+    let id = req.params.id;
+
+    try {
+
+        Order.update(data, {
+            where: {id : id}
+        })
+        .then(updated => {
+            res.send(updated);
+        });
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 // (Delete) Orders
 
