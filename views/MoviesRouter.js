@@ -18,6 +18,10 @@ router.get('/newest', MoviesController.newestMovies);
 
 router.get('/adult', MoviesController.adultMovies);
 
+// - Find a movie according to a title
+
+router.get('/title', MoviesController.findTitleMovie);
+
 // (Create) Store a movie
 
 router.post('/new', auth, adminPrivileges, MoviesController.createMovie);
