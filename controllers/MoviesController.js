@@ -152,3 +152,6 @@ MoviesController.deleteAllMovies = (req, res) => {};
 // - Filtered by Id
 
 MoviesController.deleteMovie = (req, res) => {};
+
+
+module.exports = MoviesController;

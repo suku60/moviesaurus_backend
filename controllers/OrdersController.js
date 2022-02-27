@@ -69,4 +69,6 @@ OrdersController.deleteAllOrders = (req, res) => {};
 OrdersController.deleteOrder = (req, res) => {};
 
 
+module.exports = OrdersController;
+
 

@@ -146,5 +146,64 @@ UsersController.deleteAll = async (req, res) => {
 
 // - Filtered by Id
 
-UsersController.deleteById = (req, res) => {};
+UsersController.deleteById = async (req, res) => {
 
+    let id = req.params.id;
+
+    try {
+
+        User.destroy({
+            where : { id : id },
+            truncate : false
+        })
+        .then(deletedUser => {
+            console.log(deletedUser);
+            res.send(`User with id: ${id} has been deleted`);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
+
+UsuarioController.logUsuario = (req, res) => {
+
+    let correo = req.body.email;
+    let password = req.body.password;
+
+    Usuario.findOne({
+        where : {email : correo}
+    }).then(Usuario => {
+
+        if(!Usuario){
+            res.send("Usuario o contraseña inválido");
+        }else {
+            //el usuario existe, por lo tanto, vamos a comprobar
+            //si el password es correcto
+
+            if (bcrypt.compareSync(password, Usuario.password)) { //COMPARA CONTRASEÑA INTRODUCIDA CON CONTRASEÑA GUARDADA, TRAS DESENCRIPTAR
+
+                console.log(Usuario.password);
+
+                let token = jwt.sign({ usuario: Usuario }, authConfig.secret, {
+                    expiresIn: authConfig.expires
+                });
+
+                res.json({
+                    usuario: Usuario,
+                    token: token
+                })
+            } else {
+                res.status(401).json({ msg: "Usuario o contraseña inválidos" });
+            }
+        };
+
+
+    }).catch(error => {
+        res.send(error);
+    })
+};
+
+
+module.exports = UsersController;
