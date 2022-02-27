@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const adminPrivileges = require("../middlewares/adminPrivileges");
 
 const MoviesController = require('../controllers/MoviesController');
 
@@ -13,18 +14,18 @@ router.get('/newest', MoviesController.newestMovies);
 router.get('/adult', MoviesController.adultMovies);
 
 // (Create) Store a movie
-router.post('/', MoviesController.createMovie);
+router.post('/', adminPrivileges, MoviesController.createMovie);
 
 
 // (Update) Modify movie data
-router.put('/:id', MoviesController.updateMovie);
+router.put('/:id', adminPrivileges, MoviesController.updateMovie);
 
 
 // (Delete) movies stored
 // - All
-router.delete('/', MoviesController.deleteAllMovies);
+router.delete('/', adminPrivileges, MoviesController.deleteAllMovies);
 // - Filtered by Id
-router.delete('/:id', MoviesController.deleteMovie);
+router.delete('/:id', adminPrivileges, MoviesController.deleteMovie);
 
 
 module.exports = router;
