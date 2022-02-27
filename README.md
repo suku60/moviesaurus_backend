@@ -1,15 +1,40 @@
-## Backend simulation of an online videoclub
+# Backend simulation of an online videoclub
+***
 
-### Proyect description
+### **Proyect description**
 
 We are creating a backend that will be able to interact with TheMovieDatabase's API.
 
 You will be able to create your own user in a database, and simulate you are renting a movie for a period of time. 
+***
 
 
-###### Register & Login
+### **How to run**
 
-Open Postman.
+#### ***Dependencies & software needed***
+
+Create a folder and open it in *Visual Studio Code* or your preferred coding software. 
+Fork from *`https://github.com/suku60/BackendFilmDatabase02-22`*
+
+First of all, we must install a series of dependencies needed for our proyect using the package manager npm.
+
+Open a new terminal
+type:
+
+`npm init`
+
+`npm i` 
+
+It will auto install all needed dependencies.
+
+<!-- Sequelieze not needed for user -->
+
+
+***
+
+#### ***Register as an user***
+
+Open *Postman*.
 <!-- postman indications here -->
 Use the following adress and post method for user creation: 
 http://localhost:3000/users/
@@ -32,53 +57,44 @@ Send the data as and `{object}`:
 
 
 
-###### Privileges (suscription)
+### ***User endpoints***
 
-Level 1 users are able to explore our database and to create requests for an order.
 
-Level 2 users will be able to create a maximum of 5 orders every month whenever they want to.
+#### - ***create and show users***
+``
+http://localhost:3000/users/``
 
-Upgrade to level to paying the monthly suscription
-
-##### How to simulate and test from Postman
-
-###### Users
-
-http://localhost:3000/users/
 GET method: shows a list of all users
+
 POST method: create a new user
 
-User requirements:
 
-`{`
+#### - ***modify user data***
+``
+http://localhost:3000/users/:id`` 
 
-   ` name : <insert name here>` 
-
-   ` birthdate : <insert birthdate here>`
-
-   ` username : <insert username here>`
-
-   ` password : <insert password here>`
-
-   ` email : <insert email here>`
-   
-`}`
-
-http://localhost:3000/users/:id
 PUT method: modify user data
 
-http://localhost:3000/users/
-DELETE method: delete all users
+**JWT needed**
 
-http://localhost:3000/users/:id/levelup
+``
+http://localhost:3000/users/:id/levelup``
+
 PUT method: level up the user data
 
+#### - ***delete user data***
+``
+http://localhost:3000/users/``
 
-###### Movies
+DELETE method: delete all users
+``
+http://localhost:3000/users/:id``
 
-http://localhost:3000/movies/
-GET method: shows a list of all movies
-POST method: add a new movie
+DELETE method: delete user by id
+
+***
+
+### ***Movies endpoints***
 
 Movie requirements:
 
@@ -98,24 +114,58 @@ Movie requirements:
    
 `}`
 
-http://localhost:3000/movies/:id
-PUT method: update movie data by id.
 
-http://localhost:3000/movies/
+#### - ***search and add new movies***
+
+``
+http://localhost:3000/movies/``
+
+GET method: shows a list of all movies
+
+POST method: add a new movie
+
+
+``
+http://localhost:3000/movies/newest``
+
+GET method: show newest movies
+
+
+``
+http://localhost:3000/movies/adult``
+
+GET method: show a list of adult movies
+
+
+#### - ***update movie data***
+
+``
+http://localhost:3000/movies/:id``
+
+PUT method: update/modify movie data by id.
+
+
+#### - ***delete movies***
+
+``
+http://localhost:3000/movies/``
 DELETE method: delete all movies
 
-http://localhost:3000/movies/:id
+``
+http://localhost:3000/movies/:id``
 DELETE method: delete a movie by id
+
+***
 
 ###### Orders
 
 Available as a member:
-
-http://localhost:3000/orders/
+``
+http://localhost:3000/orders/``
 GET method: shows a list of all orders
 POST method: create a new order
-
-http://localhost:3000/orders/active 
+``
+http://localhost:3000/orders/active ``
 GET method: shows a list of all active orders
 
 Order requirements:
@@ -133,43 +183,33 @@ Order requirements:
    ` active : <true or false>`
    
 `}`
-
-http://localhost:3000/orders/:id
+``
+http://localhost:3000/orders/:id``
 PUT method: update order data
-
-http://localhost:3000/orders/
+``
+http://localhost:3000/orders/``
 DELETE method: delete all orders
-
-http://localhost:3000/orders/:id/
+``
+http://localhost:3000/orders/:id/``
 DELETE method: delete an order by id
 
-### How to run
 
-###### Dependencies & software
-
-Create a folder and open it in Visual Studio Code or your preferred coding software. First of all, we must install a series of dependencies needed for our proyect using the package manager npm.
-
-Open a new terminal
-type:
-
-`npm init`
-
-`npm i` 
-
-It will auto install all needed dependencies.
-
-<!-- Sequelieze not needed for user -->
-
-
-###### How to add your own movie to the database
+### How to add your own movie to the database
 
 Open Postman.
 
 Write down or copy the following adress.
-
-http://localhost:3000/movies/
+``
+http://localhost:3000/movies/``
 
 POST method: add a new movie
 
 Movie requirements:
 <!--  -->
+###### Privileges (suscription)
+
+Level 1 users are able to explore our database and to create requests for an order.
+
+Level 2 users will be able to create a maximum of 5 orders every month whenever they want to.
+
+Upgrade to level to paying the monthly suscription
