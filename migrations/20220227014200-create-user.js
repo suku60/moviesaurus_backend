@@ -29,12 +29,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       level: {
-        default: 1,
+        defaultValue: 1,
         allowNull: false,
         type: Sequelize.INTEGER
       },
       rol: {
-        default: false,
+        defaultValue: false,
         allowNull: false,
         type: Sequelize.BOOLEAN
       },

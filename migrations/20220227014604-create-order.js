@@ -9,18 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       movieId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       price: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       active: {
+        allowNull: false,
+        defaultValue: true,
         type: Sequelize.BOOLEAN
       },
       createdAt: {
