@@ -147,7 +147,23 @@ MoviesController.updateMovie = async (req, res) => {
 
 // - All
 
-MoviesController.deleteAllMovies = (req, res) => {};
+MoviesController.deleteAllMovies = async (req, res) => {
+
+    try {
+
+        Movie.destroy({
+            where : {},
+            truncate : false
+        })
+        .then(deletedMovie => {
+            res.send(`${deletedMovie} have been deleted`);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 // - Filtered by Id
 
