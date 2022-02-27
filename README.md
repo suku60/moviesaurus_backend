@@ -74,29 +74,26 @@ DELETE method: delete a movie by id
 
 ###### Orders
 
-http://localhost:3000/orders/
-GET method: shows a list of all users
-POST method: create a new user
+Available as a member:
 
-User requirements:
+http://localhost:3000/orders/
+GET method: shows a list of all orders
+POST method: create a new order
+
+http://localhost:3000/orders/active 
+GET method: shows a list of all active orders
+
+Order requirements:
 <!--  -->
 
 http://localhost:3000/orders/:id
-PUT method: modify user data
+PUT method: update order data
 
 http://localhost:3000/orders/
-DELETE method: delete all users
+DELETE method: delete all orders
 
-http://localhost:3000/orders/:id/levelup
-PUT method: level up the user data
-- Create
-
-- Read / Show
-
-- Update / Modify
-
-- Delete
-
+http://localhost:3000/orders/:id/
+DELETE methos: delete an order by id
 
 ### How to run
 

@@ -7,24 +7,24 @@ const { route } = require('../router');
 // CRUD Restfull endpoints. 
 
 // (Read) Show all orders
-router.get('/', OrdersController.showOrders);
+router.get('/', auth, OrdersController.showOrders);
 // - Show only active:
-router.get('/active', OrdersController.showActiveOrders);
+router.get('/active', auth, OrdersController.showActiveOrders);
 
 
 // (Create) Create an order
-router.post('/', OrdersController.newOrder);
+router.post('/', auth, OrdersController.newOrder);
 
 
 // (Update) Modify order
-router.put('/:id', OrdersController.updateOrder);
+router.put('/:id', adminPrivileges, OrdersController.updateOrder);
 
 
 // (Delete) Orders
 // - All
-router.delete('/', OrdersController.deleteAllOrders);
+router.delete('/', adminPrivileges, OrdersController.deleteAllOrders);
 // - Filtered by Id
-router.delete('/:id', OrdersController.deleteOrder);
+router.delete('/:id', adminPrivileges, OrdersController.deleteOrder);
 
 
 module.exports = router;
