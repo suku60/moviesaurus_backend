@@ -9,7 +9,7 @@ You will be able to create your own user in a database, and simulate you are ren
 ***
 
 
-### **How to run**
+### **How to run tests**
 
 #### ***Dependencies & software needed***
 
@@ -26,6 +26,24 @@ type:
 `npm i` 
 
 It will auto install all needed dependencies.
+
+Open *MySQL Workbench* and create new schema with the same name as in config.json at *"developement."*
+
+Now you must migrate the database to *MySQL Workench*.
+
+Open a new terminal in *VSC*.
+
+Install sequelize if not done before.
+
+`npm i sequelize`
+
+Now migrate your database.
+
+`sequelize db:migrate`
+
+Now you'll be able to read and modify data from *Postman*.
+
+
 
 <!-- Sequelieze not needed for user -->
 
@@ -55,7 +73,7 @@ User data requirements:
 
 
 #### - ***create and show users***
-``
+- ``
 http://localhost:3000/users/``
 
 GET method: shows a list of all users
@@ -67,13 +85,13 @@ POST method: create a new user
 
 ##### **JWT or admin privileges needed**
 
-``
+- ``
 http://localhost:3000/users/:id`` 
 
 PUT method: modify user data
 
 
-``
+- ``
 http://localhost:3000/users/:id/levelup``
 
 PUT method: level up the user data
@@ -82,11 +100,11 @@ PUT method: level up the user data
 #### - ***delete user data***
 
 ##### **Admin privileges needed**
-``
+- ``
 http://localhost:3000/users/``
 
 DELETE method: delete all users
-``
+- ``
 http://localhost:3000/users/:id``
 
 DELETE method: delete user by id
@@ -116,7 +134,7 @@ Movie requirements:
 
 #### - ***search and add new movies***
 
-``
+- ``
 http://localhost:3000/movies/``
 
 GET method: shows a list of all movies
@@ -124,13 +142,13 @@ GET method: shows a list of all movies
 POST method: add a new movie
 
 
-``
+- ``
 http://localhost:3000/movies/newest``
 
 GET method: show newest movies
 
 
-``
+- ``
 http://localhost:3000/movies/adult``
 
 
@@ -141,7 +159,7 @@ GET method: show a list of adult movies
 
 ##### **JWT(user privileges) or admin privileges needed**
 
-``
+- ``
 http://localhost:3000/movies/:id``
 
 PUT method: update/modify movie data by id.
@@ -151,12 +169,12 @@ PUT method: update/modify movie data by id.
 
 ##### **Admin privileges needed**
 
-``
+- ``
 http://localhost:3000/movies/``
 
 DELETE method: delete all movies
 
-``
+- ``
 http://localhost:3000/movies/:id``
 
 DELETE method: delete a movie by id
@@ -166,18 +184,6 @@ DELETE method: delete a movie by id
 ### ***Order endpoints***
 
 ##### **JWT(user privileges) or admin privileges needed**
-
-``
-http://localhost:3000/orders/``
-
-GET method: shows a list of all orders
-
-POST method: create a new order
-
-``
-http://localhost:3000/orders/active ``
-
-GET method: shows a list of all active orders
 
 Order requirements:
 
@@ -194,17 +200,39 @@ Order requirements:
    ` active : <true or false>`
    
 `}`
-``
+
+
+#### - ***create orders***
+
+- ``
+http://localhost:3000/orders/``
+
+GET method: shows a list of all orders
+
+POST method: create a new order
+
+
+#### - ***show orders by status or id***
+
+- ``
+http://localhost:3000/orders/active ``
+
+GET method: shows a list of all active orders
+
+- ``
 http://localhost:3000/orders/:id``
 
 PUT method: update order data
 
-``
+
+#### - ***delete orders***
+
+- ``
 http://localhost:3000/orders/``
 
 DELETE method: delete all orders
 
-``
+- ``
 http://localhost:3000/orders/:id/``
 
 DELETE method: delete an order by id

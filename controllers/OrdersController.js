@@ -34,7 +34,21 @@ OrdersController.newOrder = (req,res) => {
 
 // (Read) Show all orders
 
-OrdersController.showOrders = (req, res) => {};
+OrdersController.showOrders = async (req,res) => {
+
+    let neededData = `SELECT user.name AS name, movies.title AS title , movies.popularity AS top_rated, users.username AS username, users.email AS email
+    FROM users INNER JOIN orders 
+    ON users.id = orders.userId INNER JOIN movies 
+    ON movies.id = orders.movieId WHERE popularity > 6 AND name LIKE '%Ra%' ORDER BY top_rated DESC`; 
+
+    let result = await Order.sequelize.query(neededData,{
+        type: Order.sequelize.QueryTypes.SELECT});
+
+    if(result){
+        res.send(result);
+    }
+
+}
 
 // - Show only active:
 
