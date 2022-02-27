@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     movieId: DataTypes.INTEGER,
     date: DataTypes.DATE,
-    price: DataTypes.INTEGER
+    price: DataTypes.INTEGER,
+    active: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Order',
