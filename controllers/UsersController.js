@@ -126,7 +126,23 @@ UsersController.levelUpUser = (req, res) => {};
 
 // - All
 
-UsersController.deleteAll = (req, res) => {};
+UsersController.deleteAll = async (req, res) => {
+
+    try {
+
+        User.destroy({
+            where : {},
+            truncate : false
+        })
+        .then(deletedUser => {
+            res.send(`${deletedUser} have been deleted`);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 
 // - Filtered by Id
 
