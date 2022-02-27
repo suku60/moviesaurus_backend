@@ -13,6 +13,9 @@ You will be able to create your own user in a database, and simulate you are ren
 
 #### ***Dependencies & software needed***
 
+
+![Software](/img/dependencies.png)
+
 Create a folder and open it in *Visual Studio Code* or your preferred coding software. 
 Clone repository from *`https://github.com/suku60/BackendFilmDatabase02-22`*
 ```bash 
