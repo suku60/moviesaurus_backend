@@ -12,8 +12,19 @@ MoviesController.showAllMovies = (req, res) => {};
 
 // - Show newest movies
 
-MoviesController.newestMovies = (req, res) => {};
+MoviesController.newestMovies = async (req, res) => {
 
+    try {
+
+        let result = await axios.get("https://api.themoviedb.org/3/movie/upcoming?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=es-ES&page=1");
+
+        res.send(result.data);
+
+    } catch (error) {
+        
+        console.log(error);
+    }
+}
 // - Show filtered by adult rating
 
 MoviesController.adultMovies = (req, res) => {};
