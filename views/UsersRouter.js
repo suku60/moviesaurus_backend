@@ -24,7 +24,7 @@ router.put('/:id/levelup', auth, UsersController.levelUpUser);
 
 // (Delete) users
 // - All
-router.delete('/', adminPrivileges, UsersController.deleteAll);
+router.delete('/', auth, adminPrivileges, UsersController.deleteAll);
 // - Filtered by Id
 router.delete('/:id', auth, UsersController.deleteById);
 

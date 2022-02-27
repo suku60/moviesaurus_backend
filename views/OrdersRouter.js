@@ -17,14 +17,14 @@ router.post('/', auth, OrdersController.newOrder);
 
 
 // (Update) Modify order
-router.put('/:id', adminPrivileges, OrdersController.updateOrder);
+router.put('/:id', auth, adminPrivileges, OrdersController.updateOrder);
 
 
 // (Delete) Orders
 // - All
-router.delete('/', adminPrivileges, OrdersController.deleteAllOrders);
+router.delete('/', auth, adminPrivileges, OrdersController.deleteAllOrders);
 // - Filtered by Id
-router.delete('/:id', adminPrivileges, OrdersController.deleteOrder);
+router.delete('/:id', auth, adminPrivileges, OrdersController.deleteOrder);
 
 
 module.exports = router;
