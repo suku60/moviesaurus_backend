@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "admin_developement",
+    "username": "root",
     "password": "1234",
     "database": "videoclub_2022",
     "host": "127.0.0.1",
