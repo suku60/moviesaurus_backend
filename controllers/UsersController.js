@@ -34,7 +34,7 @@ UsersController.showAllUsersById = (req, res) => {
 // Email
 
 UsersController.showAllUsersByEmail = (req, res) => {
-    Usuario.findOne({ where : { email : req.params.email }})
+    User.findOne({ where : { email : req.params.email }})
     .then(data => {
         res.send(data)
     });
@@ -167,35 +167,33 @@ UsersController.deleteById = async (req, res) => {
 
 };
 
-UsuarioController.logUsuario = (req, res) => {
+UsersController.logUser = (req, res) => {
 
-    let correo = req.body.email;
+    let email = req.body.email;
     let password = req.body.password;
 
-    Usuario.findOne({
-        where : {email : correo}
-    }).then(Usuario => {
+    User.findOne({
+        where : {email : email}
+    }).then(User => {
 
-        if(!Usuario){
-            res.send("Usuario o contraseña inválido");
+        if(!User){
+            res.send("Invalid data: user or password not corrent.");
         }else {
-            //el usuario existe, por lo tanto, vamos a comprobar
-            //si el password es correcto
 
-            if (bcrypt.compareSync(password, Usuario.password)) { //COMPARA CONTRASEÑA INTRODUCIDA CON CONTRASEÑA GUARDADA, TRAS DESENCRIPTAR
+            if (bcrypt.compareSync(password, User.password)) { 
 
-                console.log(Usuario.password);
+                console.log(User.password);
 
-                let token = jwt.sign({ usuario: Usuario }, authConfig.secret, {
+                let token = jwt.sign({ user: User }, authConfig.secret, {
                     expiresIn: authConfig.expires
                 });
 
                 res.json({
-                    usuario: Usuario,
+                    user: User,
                     token: token
                 })
             } else {
-                res.status(401).json({ msg: "Usuario o contraseña inválidos" });
+                res.status(401).json({ msg: "Invalid data: user or password not corrent." });
             }
         };
 

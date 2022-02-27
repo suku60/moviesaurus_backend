@@ -25,19 +25,23 @@ router.post('/new', UsersController.createUser);
 
 // (Update) Modify user data
 
-router.put('/:id', auth, UsersController.updateUser);
+router.put('/update/:id', auth, UsersController.updateUser);
 
-router.put('/:id/levelup', auth, UsersController.levelUpUser);
+router.put('/update/:id/levelup', auth, UsersController.levelUpUser);
 
 // (Delete) users
 
 // - All
 
-router.delete('/deleteall', auth, adminPrivileges, UsersController.deleteAll);
+router.delete('/delete/all', auth, adminPrivileges, UsersController.deleteAll);
 
 // - Filtered by Id
 
-router.delete('/:id', auth, UsersController.deleteById);
+router.delete('/delete/:id', auth, UsersController.deleteById);
+
+// Login as an user
+
+router.post('/login', UsersController.logUser);
 
 
 module.exports = router;

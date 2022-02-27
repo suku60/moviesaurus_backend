@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require("../middlewares/auth");
 const adminPrivileges = require("../middlewares/adminPrivileges");
 
 const OrdersController = require('../controllers/OrdersController');
@@ -22,18 +23,18 @@ router.post('/new', auth, OrdersController.newOrder);
 
 // (Update) Modify order
 
-router.put('/:id', auth, adminPrivileges, OrdersController.updateOrder);
+router.put('/update/:id', auth, adminPrivileges, OrdersController.updateOrder);
 
 
 // (Delete) Orders
 
 // - All
 
-router.delete('/deleteall', auth, adminPrivileges, OrdersController.deleteAllOrders);
+router.delete('/delete/all', auth, adminPrivileges, OrdersController.deleteAllOrders);
 
 // - Filtered by Id
 
-router.delete('/:id', auth, adminPrivileges, OrdersController.deleteOrder);
+router.delete('/delete/:id', auth, adminPrivileges, OrdersController.deleteOrder);
 
 
 module.exports = router;
