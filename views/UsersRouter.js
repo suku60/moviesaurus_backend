@@ -7,6 +7,11 @@ const UsersController = require('../controllers/UsersController');
 
 // CRUD Restfull endpoints. 
 
+
+// (Create) user / Register
+
+router.post('/new', UsersController.createUser);
+
 // (Read) Find users
 
 router.get('/', auth, UsersController.showAllUsers);
@@ -16,11 +21,6 @@ router.get('/', auth, UsersController.showAllUsers);
 router.get('/:id', auth, UsersController.showAllUsersById);
 
 router.get('/:email', auth, UsersController.showAllUsersByEmail);
-
-
-// (Create) user / Register
-
-router.post('/new', UsersController.createUser);
 
 
 // (Update) Modify user data
