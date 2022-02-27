@@ -13,7 +13,7 @@ router.get('/active', auth, OrdersController.showActiveOrders);
 
 
 // (Create) Create an order
-router.post('/', auth, OrdersController.newOrder);
+router.post('/new', auth, OrdersController.newOrder);
 
 
 // (Update) Modify order
@@ -22,7 +22,7 @@ router.put('/:id', auth, adminPrivileges, OrdersController.updateOrder);
 
 // (Delete) Orders
 // - All
-router.delete('/', auth, adminPrivileges, OrdersController.deleteAllOrders);
+router.delete('/deleteall', auth, adminPrivileges, OrdersController.deleteAllOrders);
 // - Filtered by Id
 router.delete('/:id', auth, adminPrivileges, OrdersController.deleteOrder);
 

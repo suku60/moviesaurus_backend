@@ -15,7 +15,7 @@ router.get('/:email', auth, UsersController.showAllUsersByEmail);
 
 
 // (Create) user / Register
-router.post('/', UsersController.createUser);
+router.post('/new', UsersController.createUser);
 
 
 // (Update) Modify user data
@@ -24,7 +24,7 @@ router.put('/:id/levelup', auth, UsersController.levelUpUser);
 
 // (Delete) users
 // - All
-router.delete('/', auth, adminPrivileges, UsersController.deleteAll);
+router.delete('/deleteall', auth, adminPrivileges, UsersController.deleteAll);
 // - Filtered by Id
 router.delete('/:id', auth, UsersController.deleteById);
 

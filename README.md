@@ -32,14 +32,12 @@ It will auto install all needed dependencies.
 
 ***
 
-#### ***Register as an user***
+### ***Endpoints & Postman testing***
 
-Open *Postman*.
-<!-- postman indications here -->
-Use the following adress and post method for user creation: 
-http://localhost:3000/users/
 
-Send the data as and `{object}`:
+### ***User endpoints***
+
+User data requirements:
 
 `{`
 
@@ -54,10 +52,6 @@ Send the data as and `{object}`:
    ` email : <insert email here>`
    
 `}`
-
-
-
-### ***User endpoints***
 
 
 #### - ***create and show users***
@@ -139,6 +133,7 @@ GET method: show newest movies
 ``
 http://localhost:3000/movies/adult``
 
+
 GET method: show a list of adult movies
 
 
@@ -158,10 +153,12 @@ PUT method: update/modify movie data by id.
 
 ``
 http://localhost:3000/movies/``
+
 DELETE method: delete all movies
 
 ``
 http://localhost:3000/movies/:id``
+
 DELETE method: delete a movie by id
 
 ***

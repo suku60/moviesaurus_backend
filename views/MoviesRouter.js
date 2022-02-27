@@ -14,7 +14,7 @@ router.get('/newest', MoviesController.newestMovies);
 router.get('/adult', MoviesController.adultMovies);
 
 // (Create) Store a movie
-router.post('/', auth, adminPrivileges, MoviesController.createMovie);
+router.post('/new', auth, adminPrivileges, MoviesController.createMovie);
 
 
 // (Update) Modify movie data
@@ -23,7 +23,7 @@ router.put('/:id', auth, adminPrivileges, MoviesController.updateMovie);
 
 // (Delete) movies stored
 // - All
-router.delete('/', auth, adminPrivileges, MoviesController.deleteAllMovies);
+router.delete('/deleteall', auth, adminPrivileges, MoviesController.deleteAllMovies);
 // - Filtered by Id
 router.delete('/:id', auth, adminPrivileges, MoviesController.deleteMovie);
 
