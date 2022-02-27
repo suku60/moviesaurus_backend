@@ -27,7 +27,7 @@ MoviesController.newestMovies = async (req, res) => {
 }
 // - Show filtered by adult rating
 
-MoviesController.adultMovies = (req, res) => {(req,res) => {
+MoviesController.adultMovies = (req,res) => {
 
     Movie.findAll({
         where : {
