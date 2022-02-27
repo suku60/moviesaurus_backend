@@ -151,7 +151,27 @@ MoviesController.deleteAllMovies = (req, res) => {};
 
 // - Filtered by Id
 
-MoviesController.deleteMovie = (req, res) => {};
+MoviesController.deleteMovie = (req, res) => {
+
+    let id = req.params.pk;
+
+    try {
+        Movie.findOne({
+            where: { id: id },
+        }).then(movie => {
+            if (movie) {
+                movie.destroy({
+                    truncate: false
+                });
+                res.status(200).json({ msg: `Movie with id ${id} was deleted.` });
+            } else {
+                res.status(404).json({ msg: `Movie with id ${id} does not exists, you can't delete a phantom.` })
+            }
+        });
+    } catch (error) {
+        res.send(error);
+    }
+}
 
 
 module.exports = MoviesController;

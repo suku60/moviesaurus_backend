@@ -14,16 +14,17 @@ You will be able to create your own user in a database, and simulate you are ren
 #### ***Dependencies & software needed***
 
 Create a folder and open it in *Visual Studio Code* or your preferred coding software. 
-Fork from *`https://github.com/suku60/BackendFilmDatabase02-22`*
+Clone repository from *`https://github.com/suku60/BackendFilmDatabase02-22`*
+```bash 
+git clone https://github.com/suku60/BackendFilmDatabase02-22
+```
 
 First of all, we must install a series of dependencies needed for our proyect using the package manager npm.
 
-Open a new terminal
-type:
-
-`npm init`
-
-`npm i` 
+Open a new terminal and type:
+```bash 
+npm i
+```
 
 It will auto install all needed dependencies.
 
@@ -35,11 +36,20 @@ Open a new terminal in *VSC*.
 
 Install sequelize if not done before.
 
-`npm i sequelize`
+```bash 
+npm i sequelize
+```
 
 Now migrate your database.
 
-`sequelize db:migrate`
+```bash 
+npx sequelize db:migrate
+```
+
+Run the server with node.js:
+```bash 
+npm run dev
+```
 
 Now you'll be able to read and modify data from *Postman*.
 
@@ -61,7 +71,7 @@ User data requirements:
 
    ` name : <insert name here>` 
 
-   ` birthdate : <insert birthdate here>`
+   ` birthdate : <insert birthdate here with this format: '1000-01-01 00:00:00'>`
 
    ` username : <insert username here>`
 
@@ -72,13 +82,18 @@ User data requirements:
 `}`
 
 
-#### - ***create and show users***
+#### - ***create new users***
+- ``
+http://localhost:3000/users/new``
+
+POST method: create a new user
+
+#### - ***show users***
+
 - ``
 http://localhost:3000/users/``
 
 GET method: shows a list of all users
-
-POST method: create a new user
 
 
 #### - ***modify user data***
@@ -119,7 +134,7 @@ Movie requirements:
 
    ` title : <insert title here>` 
 
-   ` year : <insert year here>`
+   ` year : <insert year here with this format '1000-01-01 00:00:00'>`
 
    ` adult : <true or false>`
 
@@ -132,14 +147,20 @@ Movie requirements:
 `}`
 
 
-#### - ***search and add new movies***
+#### - ***add new movies***
+
+- ``
+http://localhost:3000/movies/new``
+
+POST method: add a new movie
+
+#### - ***search for a movie***
+
 
 - ``
 http://localhost:3000/movies/``
 
 GET method: shows a list of all movies
-
-POST method: add a new movie
 
 
 - ``
@@ -160,7 +181,7 @@ GET method: show a list of adult movies
 ##### **JWT(user privileges) or admin privileges needed**
 
 - ``
-http://localhost:3000/movies/:id``
+http://localhost:3000/movies/update/:id``
 
 PUT method: update/modify movie data by id.
 
@@ -170,12 +191,12 @@ PUT method: update/modify movie data by id.
 ##### **Admin privileges needed**
 
 - ``
-http://localhost:3000/movies/``
+http://localhost:3000/movies/delete/all``
 
 DELETE method: delete all movies
 
 - ``
-http://localhost:3000/movies/:id``
+http://localhost:3000/movies/delete/:id``
 
 DELETE method: delete a movie by id
 
@@ -193,7 +214,7 @@ Order requirements:
 
    ` movieId : <insert movieId here>`
 
-   ` date : <insert date here>`
+   ` date : <insert date here with this format '1000-01-01 00:00:00'>`
 
    ` price : <insert price here>`
 
@@ -208,6 +229,9 @@ Order requirements:
 http://localhost:3000/orders/``
 
 GET method: shows a list of all orders
+
+- ``
+http://localhost:3000/orders/new``
 
 POST method: create a new order
 
@@ -228,12 +252,12 @@ PUT method: update order data
 #### - ***delete orders***
 
 - ``
-http://localhost:3000/orders/``
+http://localhost:3000/orders/delete/all``
 
 DELETE method: delete all orders
 
 - ``
-http://localhost:3000/orders/:id/``
+http://localhost:3000/orders/delete/:id/``
 
 DELETE method: delete an order by id
 

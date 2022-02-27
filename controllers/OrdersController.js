@@ -52,7 +52,29 @@ OrdersController.showOrders = async (req,res) => {
 
 // - Show only active:
 
-OrdersController.showActiveOrders = (req, res) => {};
+OrdersController.showActiveOrders = (req,res) => {
+
+    Order.findAll({
+        where : {
+            [Op.not] : [
+                {
+                    active : {
+                        [Op.like] : 0
+                    }
+                }
+            ]
+        }
+    }).then(activeOrders => {
+        if(activeOrders != 0){
+            res.send(activeOrders);
+        }else {
+            res.send("There are no active orders");
+        }
+    }).catch(error =>{
+        res.send(error)
+    })
+
+};
 
 // (Update) Modify order
 
