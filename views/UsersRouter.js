@@ -7,10 +7,10 @@ const { route } = require('../router');
 // CRUD Restfull endpoints. 
 
 // (Read) Find users
-router.get('/', UsersController.showAllUsers);
+router.get('/', auth, UsersController.showAllUsers);
 // - Filtered by id / email
-router.get('/', UsersController.showAllUsersById);
-router.get('/', UsersController.showAllUsersByEmail);
+router.get('/:id', auth, UsersController.showAllUsersById);
+router.get('/:email', auth, UsersController.showAllUsersByEmail);
 
 
 // (Create) user / Register
@@ -18,14 +18,14 @@ router.post('/', UsersController.createUser);
 
 
 // (Update) Modify user data
-router.put('/:id', UsersController.updateUser);
-router.put('/:id/levelup', UsersController.levelUpUser);
+router.put('/:id', auth, UsersController.updateUser);
+router.put('/:id/levelup', auth, UsersController.levelUpUser);
 
 // (Delete) users
 // - All
-router.delete('/', UsersController.deleteAll);
+router.delete('/', adminPrivileges, UsersController.deleteAll);
 // - Filtered by Id
-router.delete('/', UsersController.deleteById);
+router.delete('/', auth, UsersController.deleteById);
 
 
 module.exports = router;
