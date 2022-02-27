@@ -9,15 +9,68 @@ You will be able to create your own user in a database, and simulate you are ren
 
 ###### Register & Login
 
-###### Provileges explanation
+Open Postman.
+<!-- postman indications here -->
+Use the following adress and post method for user creation: 
+http://localhost:3000/users/
 
-##### CRUD
+Send the data as and {object}:
+{
+    name : name
+    birthdate : birthdate
+    username : username
+    password : password
+    <!-- complete as we do it -->
+}
+
+
+
+###### Privileges explanation
+
+Level 1 users will be able to explore the database but only level 2 users will be able to create orders. 
+
+Use the level up for having the access to create orders.
+
+##### How to simulate and test from Postman
 
 ###### Users
 
+http://localhost:3000/users/
+GET method: shows a list of all users
+POST method: create a new user
+
+User requirements:
+<!--  -->
+
+http://localhost:3000/users/:id
+PUT method: modify user data
+
+http://localhost:3000/users/
+DELETE method: delete all users
+
+http://localhost:3000/users/:id/levelup
+PUT method: level up the user data
+
+
 ###### Movies
 
+- Create
+
+- Read / Show
+
+- Update / Modify
+
+- Delete
+
 ###### Orders
+
+- Create
+
+- Read / Show
+
+- Update / Modify
+
+- Delete
 
 
 ### How to run
@@ -34,8 +87,6 @@ type:
 `npm i` 
 
 It will auto install all needed dependencies.
-
-
 
 
 

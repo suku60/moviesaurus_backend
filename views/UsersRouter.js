@@ -19,7 +19,7 @@ router.post('/', UsersController.createUser);
 
 // (Update) Modify user data
 router.put('/:id', UsersController.updateUser);
-
+router.put('/:id/levelup', UsersController.levelUpUser);
 
 // (Delete) users
 // - All
