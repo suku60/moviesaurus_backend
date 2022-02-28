@@ -25,6 +25,7 @@ MoviesController.newestMovies = async (req, res) => {
         console.log(error);
     }
 }
+
 // - Show filtered by adult rating
 
 MoviesController.adultMovies = (req,res) => {

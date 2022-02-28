@@ -21,11 +21,11 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       popularity: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.FLOAT
       },
       image: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       description: {

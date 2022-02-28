@@ -70,18 +70,12 @@ Now you'll be able to read and modify data from *Postman*.
 
 User data requirements:
 
-`{`
-
-   ` name : <insert name here>` 
-
-   ` birthdate : <insert birthdate here with this format: '1000-01-01 00:00:00'>`
-
-   ` username : <insert username here>`
-
-   ` password : <insert password here>`
-
-   ` email : <insert email here>`
-   
+`{`  
+   ` name : <insert name here>`   
+   ` birthdate : <insert birthdate here with this format: '1000-01-01 00:00:00'>`  
+   ` username : <insert username here>`  
+   ` password : <insert password here>`  
+   ` email : <insert email here>`     
 `}`
 
 
@@ -133,20 +127,13 @@ DELETE method: delete user by id
 
 Movie requirements:
 
-`{`
-
-   ` title : <insert title here>` 
-
-   ` year : <insert year here with this format '1000-01-01 00:00:00'>`
-
-   ` adult : <true or false>`
-
-   ` popularity : <insert popularity here>`
-
-   ` image : <insert image here>`
-   
-   ` description : <insert description here>`
-   
+`{`  
+   ` "title" : "<insert title here>"`   
+   ` "year" : "<insert year here with this format '1000-01-01 00:00:00'>"`  
+   ` "adult" : "<true or false>"`  
+   ` "popularity" : "<insert popularity here>"`  
+   ` "image" : "<insert image here>"`     
+   ` "description" : "<insert description here>"`     
 `}`
 
 
@@ -213,15 +200,11 @@ Order requirements:
 
 `{`
 
-   ` userId: <insert userIdhere>` 
-
-   ` movieId : <insert movieId here>`
-
-   ` date : <insert date here with this format '1000-01-01 00:00:00'>`
-
-   ` price : <insert price here>`
-
-   ` active : <true or false>`
+   ` "userId": "<insert userIdhere>"`  
+   ` "movieId" : "<insert movieId here>"`  
+   ` "date" : "<insert date here with this format '1000-01-01 00:00:00'>"`  
+   ` "price" : "<insert price here>"`  
+   ` "active" : "<true or false>"`
    
 `}`
 
