@@ -72,14 +72,10 @@ User data requirements:
 
 `{`
 
-   ` name : <insert name here>` 
-
-   ` birthdate : <insert birthdate here with this format: '1000-01-01 00:00:00'>`
-
-   ` username : <insert username here>`
-
-   ` password : <insert password here>`
-
+   ` name : <insert name here>`   
+   ` birthdate : <insert birthdate here with this format: '1000-01-01 00:00:00'>`  
+   ` username : <insert username here>`  
+   ` password : <insert password here>`  
    ` email : <insert email here>`
    
 `}`
