@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
 
     let id = req.body.id;
 
-    Usuario.findOne({
+    User.findOne({
         where : { id : id }
     }).then(foundUser => {
 

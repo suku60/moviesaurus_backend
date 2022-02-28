@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       adult: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.BOOLEAN
       },
       popularity: {

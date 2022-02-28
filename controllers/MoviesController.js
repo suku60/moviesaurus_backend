@@ -1,8 +1,7 @@
 const { Movie } = require('../models/index');
+const { default: axios } = require("axios");
 const { Op } = require('sequelize');
-const jwt = require('jsonwebtoken');
-const authConfig = require('../config/auth');
-const bcrypt = require('bcrypt');
+const movie = require('../models/movie');
 
 const MoviesController = {};
 
@@ -73,53 +72,33 @@ MoviesController.findTitleMovie = async (req, res) => {
 
 // (Create) Store a movie
 
-MoviesController.createMovie = (req, res) => {
-    
-    let title = req.body.title;
-    let year = req.body.year;
-    let popularity = req.body.popularity;
-    let image = req.body.image;
-    let description = req.body.description;
+MoviesController.createMovie = async (req, res) => {
+    try {
+        let title = req.body.title;
+        let year = req.body.year;
+        let adult = req.body.adult;
+        let popularity = req.body.popularity;
+        let image = req.body.image;
+        let description = req.body.description;
 
-    Movie.findAll({
-        where : {
-
-            [Op.or] : [
-                {
-                    title : {
-                        [Op.like] : title
-                    }
-                },
-            ]
-        }
-
-    }).then(repeatedData => {
-
-        if(repeatedData == 0){
-
-                Movie.create({
-                title: title,
-                year: year,
-                popularity: popularity,
-                image: image,
-                description: description
-            }).then(user => {
-                res.send(`${movie.title} added to our database`);
-            })
-            .catch((error) => {
-                res.send(error);
-            });
-
-        }else {
-            res.send("This movie already exists in our database");
-        }
-    }).catch(error => {
-        res.send(error)
-    });
-
-
+        Movie.create({
+            title: title,
+            year: year,
+            adult: adult,
+            popularity: popularity,
+            image: image,
+            description: description
+        }).then(movie => {
+            res.send(`${movie.title} has been added to our database`)
+        });
+        console.log(title);
+    } catch (error) {
+        console.log (error);
+        res.send(error);
+    };
 
 };
+
 
 // (Update) Modify movie data
 
