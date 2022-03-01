@@ -14,7 +14,7 @@ router.post('/new', UsersController.createUser);
 
 // (Read) Find users
 
-router.get('/', auth, UsersController.showAllUsers);
+router.get('/show', auth, UsersController.showAllUsers);
 
 // - Filtered by id / email
 

@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
 
         if(foundUser.rol == 1){
             next();
-        }else {
+        } else {
             res.send(`This user is not an admin`)
         }
     }).catch(error => {

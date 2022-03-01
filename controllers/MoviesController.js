@@ -7,7 +7,14 @@ const MoviesController = {};
 
 // (Read) Show all movies
 
-MoviesController.showAllMovies = (req, res) => {};
+MoviesController.showAllMovies = (req, res) => {
+    
+    User.findAll()
+    .then(data => {
+
+        res.send(data)
+    });
+};
 
 // - Show newest movies
 

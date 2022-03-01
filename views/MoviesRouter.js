@@ -9,7 +9,7 @@ const MoviesController = require('../controllers/MoviesController');
 
 // (Read) Show all movies
 
-router.get('/', MoviesController.showAllMovies);
+router.get('/show', MoviesController.showAllMovies);
 
 // - Show newest movies
 
@@ -25,18 +25,18 @@ router.get('/title', MoviesController.findTitleMovie);
 
 // (Create) Store a movie
 
-router.post('/new', auth, adminPrivileges, MoviesController.createMovie);
+router.post('/new', auth, MoviesController.createMovie);
 
 // (Update) Modify movie data
 
-router.put('/:id', auth, adminPrivileges, MoviesController.updateMovie);
+router.put('/:id', auth, MoviesController.updateMovie);
 
 
 // (Delete) movies stored
 
 // - All
 
-router.delete('/deleteall', auth, adminPrivileges, MoviesController.deleteAllMovies);
+router.delete('/delete/all', auth, adminPrivileges, MoviesController.deleteAllMovies);
 
 // - Filtered by Id
 

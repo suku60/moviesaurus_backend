@@ -9,7 +9,7 @@ const OrdersController = require('../controllers/OrdersController');
 
 // (Read) Show all orders
 
-router.get('/', auth, OrdersController.showOrders);
+router.get('/show', auth, OrdersController.showOrders);
 
 // - Show only active:
 
