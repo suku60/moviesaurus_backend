@@ -11,15 +11,15 @@ OrdersController.newOrder = (req,res) => {
 
     Order.create({
         price: body.price,
-        peliculaId: body.peliculaId,
-        usuarioId: body.usuarioId,
-        fecha: body.fecha
+        movieId: body.movieId,
+        userId: body.userId,
+        date: body.date
     })
-    .then(pedido => {
-        if(pedido){
-            res.send(pedido)
+    .then(request => {
+        if(request){
+            res.send(request)
         }else{
-            res.send("La creación de un nuevo pedido ha fallado");
+            res.send("Error: Order could not be completed");
         }
     })
     .catch((error => {
@@ -29,21 +29,14 @@ OrdersController.newOrder = (req,res) => {
 
 // (Read) Show all orders
 
-OrdersController.showOrders = async (req,res) => {
+OrdersController.showOrders = (req,res) => {
 
-    let neededData = `SELECT user.name AS name, movies.title AS title , movies.popularity AS top_rated, users.username AS username, users.email AS email
-    FROM users INNER JOIN orders 
-    ON users.id = orders.userId INNER JOIN movies 
-    ON movies.id = orders.movieId WHERE popularity > 6 AND name LIKE '%Ra%' ORDER BY top_rated DESC`; 
+    Order.findAll()
+    .then(data => {
 
-    let result = await Order.sequelize.query(neededData,{
-        type: Order.sequelize.QueryTypes.SELECT});
-
-    if(result){
-        res.send(result);
-    }
-
-}
+        res.send(data)
+    });
+};
 
 // - Show only active:
 
