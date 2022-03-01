@@ -27,7 +27,9 @@ router.get('/:email', auth, UsersController.showAllUsersByEmail);
 
 router.put('/update/:id', auth, UsersController.updateUser);
 
-router.put('/update/:id/levelup', auth, UsersController.levelUpUser);
+// Level up user in developement
+
+// router.put('/update/:id/levelup', auth, UsersController.levelUpUser);
 
 // (Delete) users
 

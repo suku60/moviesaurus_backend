@@ -50,7 +50,7 @@ MoviesController.adultMovies = (req,res) => {
         if(adultMovies != 0){
             res.send(adultMovies);
         }else {
-            res.send("There are no adult movies");
+            res.send("There are no adult movies to show");
         }
     }).catch(error =>{
         res.send(error)
@@ -168,7 +168,7 @@ MoviesController.deleteMovie = (req, res) => {
                 });
                 res.status(200).json({ msg: `Movie with id ${id} was deleted.` });
             } else {
-                res.status(404).json({ msg: `Movie with id ${id} does not exists, you can't delete a phantom.` })
+                res.status(404).json({ msg: `Movie with id ${id} does not exists.` })
             }
         });
     } catch (error) {

@@ -120,8 +120,6 @@ UsersController.updateUser = async (req, res) => {
 
 };
 
-UsersController.levelUpUser = (req, res) => {};
-
 // (Delete) users
 
 // - All
@@ -201,5 +199,8 @@ UsersController.logUser = (req, res) => {
     })
 };
 
+// - Level up user (unactive)
+
+// UsersController.levelUpUser = (req, res) => {};
 
 module.exports = UsersController;
