@@ -1,4 +1,5 @@
 const { Order } = require('../models/index');
+const { Op } = require('sequelize');
 
 const OrdersController = {};
 
