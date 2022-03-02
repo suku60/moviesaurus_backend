@@ -9,7 +9,7 @@ const MoviesController = {};
 
 MoviesController.showAllMovies = (req, res) => {
     
-    User.findAll()
+    Movie.findAll()
     .then(data => {
 
         res.send(data)
