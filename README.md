@@ -216,8 +216,6 @@ Order requirements:
    ` date : <insert date here with this format '1000-01-01 00:00:00'>`
 
    ` price : <insert price here>`
-
-   ` active : <true or false>`
    
 `}`
 
