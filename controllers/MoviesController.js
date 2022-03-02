@@ -66,7 +66,7 @@ MoviesController.findTitleMovie = async (req, res) => {
 
     try {
 
-        let result = await axios.get("https://api.themoviedb.org/3/search/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&query=${search}&page=1&include_adult=false");
+        let result = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&query=${search}&page=1&include_adult=false`);
 
         res.send(result.data);
         
