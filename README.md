@@ -1,4 +1,4 @@
-# Backend simulation of an online videoclub
+# MOVIESAURUS
 ***
 
 ### **Proyect description**

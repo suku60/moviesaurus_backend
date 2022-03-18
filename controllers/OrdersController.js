@@ -12,9 +12,9 @@ OrdersController.newOrder = (req,res) => {
 
     Order.create({
         userId: body.userId,
-    movieId: body.movieId,
-    date: body.date,
-    price: body.price,
+        movieId: body.movieId,
+        date: body.date,
+        price: body.price,
     })
     .then(request => {
         if(request){

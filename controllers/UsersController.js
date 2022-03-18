@@ -109,10 +109,10 @@ UsersController.updateUser = async (req, res) => {
 
         User.update(data, {
             where: {id : id}
-        })
-        .then(updated => {
+        }).then(updated => {
             res.send(updated);
         });
+
 
     } catch (error) {
         res.send(error);
@@ -167,11 +167,11 @@ UsersController.deleteById = async (req, res) => {
 
 UsersController.logUser = (req, res) => {
 
-    let email = req.body.email;
+    let username = req.body.username;
     let password = req.body.password;
 
     User.findOne({
-        where : {email : email}
+        where : {username : username}
     }).then(User => {
 
         if(!User){
@@ -185,11 +185,17 @@ UsersController.logUser = (req, res) => {
                 });
 
                 res.json({
-                    user: User,
-                    token: token
+                    token: token,
+                    name: User.name,
+                    username: User.username,
+                    rol: User.rol,
+                    level: User.level,
+                    id: User.id,
+                    birthdate: User.birthdate,
+                    email: User.email
                 })
             } else {
-                res.status(401).json({ msg: "Invalid data: user or password not corrent." });
+                res.send("Invalid data: user or password not corrent.");
             }
         };
 

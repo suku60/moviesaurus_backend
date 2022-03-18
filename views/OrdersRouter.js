@@ -13,7 +13,7 @@ router.get('/show', auth, OrdersController.showOrders);
 
 // - Show only active:
 
-router.get('/active', auth, OrdersController.showActiveOrders);
+router.get('/show/active', auth, OrdersController.showActiveOrders);
 
 
 // (Create) Create an order
