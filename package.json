@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/suku60/BackendFilmDatabase02-22.git"
+    "url": "git+https://github.com/suku60/moviesaurus_backend.git"
   },
   "author": "jmstella",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/suku60/BackendFilmDatabase02-22/issues"
+    "url": "https://github.com/suku60/moviesaurus_backend/issues"
   },
-  "homepage": "https://github.com/suku60/BackendFilmDatabase02-22#readme",
+  "homepage": "https://github.com/suku60/moviesaurus_backend#readme",
   "dependencies": {
     "axios": "0.26.0",
     "bcrypt": "5.0.1",
