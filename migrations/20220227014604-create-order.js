@@ -16,6 +16,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      user_name: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      movie_name: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       start_date: {
         allowNull: false,
         type: Sequelize.DATE

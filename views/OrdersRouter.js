@@ -11,6 +11,9 @@ const OrdersController = require('../controllers/OrdersController');
 
 router.get('/show', auth, OrdersController.showOrders);
 
+
+router.get('/show/:id', auth, OrdersController.showOrdersById);
+
 // - Show only active:
 
 router.get('/show/active', auth, OrdersController.showActiveOrders);

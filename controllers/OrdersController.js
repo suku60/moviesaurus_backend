@@ -13,13 +13,15 @@ OrdersController.newOrder = (req,res) => {
     Order.create({
         userId: body.userId,
         movieId: body.movieId,
+        user_name: body.user_name,
+        movie_name: body.movie_name,
         start_date: body.start_date,
         end_date: body.end_date,
         price: body.price,
     })
     .then(request => {
         if(request){
-            res.send("here is your order", request)
+            res.send(request)
         }else{
             res.send("Error: Order could not be completed");
         }
@@ -40,6 +42,36 @@ OrdersController.showOrders = (req,res) => {
     });
 };
 
+// show  by id
+
+OrdersController.showOrdersById = async (req, res) => {
+
+    let id = req.params.id;
+
+    // Order.findAll({
+    //     where : { id : id },
+    // })
+    // .then(data => {
+
+    //     res.send(data)
+    // });
+
+    try {
+
+        Order.findAll({
+            where : { userId : id },
+            truncate : false
+        })
+        .then(order => { 
+
+            res.send(order);
+        })
+
+    } catch (error) {
+        res.send(error);
+    }
+
+};
 // - Show only active:
 
 OrdersController.showActiveOrders = (req,res) => {
