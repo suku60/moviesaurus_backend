@@ -13,12 +13,13 @@ OrdersController.newOrder = (req,res) => {
     Order.create({
         userId: body.userId,
         movieId: body.movieId,
-        date: body.date,
+        start_date: body.start_date,
+        end_date: body.end_date,
         price: body.price,
     })
     .then(request => {
         if(request){
-            res.send(request)
+            res.send("here is your order", request)
         }else{
             res.send("Error: Order could not be completed");
         }

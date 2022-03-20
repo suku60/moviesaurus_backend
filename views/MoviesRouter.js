@@ -25,7 +25,7 @@ router.get('/title', MoviesController.findTitleMovie);
 
 // (Create) Store a movie
 
-router.post('/new', auth, MoviesController.createMovie);
+router.post('/new', MoviesController.createMovie);
 
 // (Update) Modify movie data
 

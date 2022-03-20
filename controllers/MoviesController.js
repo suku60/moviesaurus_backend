@@ -96,7 +96,8 @@ MoviesController.createMovie = async (req, res) => {
             image: image,
             description: description
         }).then(movie => {
-            res.send(`${movie.title} has been added to our database`)
+            res.send(movie)
+            console.log("movie sent here", movie)
         });
         console.log(title);
     } catch (error) {
