@@ -18,6 +18,11 @@ router.get('/show/:id', auth, OrdersController.showOrdersById);
 
 router.get('/show/active', auth, OrdersController.showActiveOrders);
 
+// show active by id:
+
+
+router.get('/show/active/:id', auth, OrdersController.showActiveOrdersById);
+
 
 // (Create) Create an order
 
